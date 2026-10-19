@@ -52,8 +52,11 @@ html{scroll-behavior:smooth}
 body{font-family:var(--font);font-weight:300;background:var(--lavender);color:var(--ink);font-size:16px;line-height:1.38;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
+
+/* Reglas de visibilidad de idioma */
 html[data-lang="en"] .es{display:none!important}
 html[data-lang="es"] .en{display:none!important}
+
 .wrap{max-width:var(--max);margin:0 auto;padding:0 80px}
 section{padding:96px 0}
 .eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:4px 12px;border-radius:9999px}
@@ -84,30 +87,32 @@ nav .right{display:flex;align-items:center;gap:16px}
 .nav-cta{font-size:14px;font-weight:500;padding:8px 20px;border:1px solid var(--ink);border-radius:40px;background:var(--white)}
 
 /* HERO */
-.hero{background:var(--canopy);color:var(--white);padding:88px 0 96px;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero{background:var(--brand);color:var(--white);padding:88px 0 96px;overflow:hidden;position:relative;isolation:isolate}
+.hero-leaves{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.13}
+.hero-leaves svg{width:100%;height:100%;display:block}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
 .hero h1{color:var(--white)}
-.hero h1 em{font-style:italic;color:var(--champagne)}
-.hero .lead{color:#d9d1c5;font-weight:300;margin-top:24px}
-.hero .eyebrow{background:transparent;border:1px solid rgba(194,164,118,.55);color:var(--champagne);margin-bottom:24px}
+.hero h1 em{font-style:italic;color:#e6cf9f}
+.hero .lead{color:#e4eeea;font-weight:300;margin-top:24px}
+.hero .eyebrow{background:transparent;border:1px solid rgba(239,230,214,.6);color:#efe6d6;margin-bottom:24px}
+.hero .btn-primary{background:#f8f5f0;color:var(--brand)}
 .hero-visual{position:relative}
 .hero-photo{border-radius:200px 200px 24px 24px;overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
 .float-card{position:absolute;background:var(--white);color:var(--canopy);border-radius:16px;padding:16px 20px;box-shadow:rgba(0,0,0,.05) 0 1px 1px 0}
 .float-card.a{left:-36px;bottom:56px;max-width:240px}
 .float-card.b{right:-12px;top:36px}
 .float-card .num{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
 .float-card .cap{font-size:14px;color:var(--graphite);margin-top:6px}
-.chip{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;padding:4px 12px;border-radius:9999px;background:var(--mint);color:var(--canopy)}
+.chip{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;padding:4px 12px;border-radius:9999px;background:#e6efec;color:var(--brand)}
 
 /* PAIN */
 .center{text-align:center}
 .center .lead{margin:20px auto 0}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.card{border-radius:24px;padding:32px}
+.card{border-radius:24px;padding:32px;border:1px solid rgba(20,20,20,.05)}
 .card h3{color:var(--canopy);margin-bottom:12px}
-.card{border:1px solid rgba(20,20,20,.05)}
 .card p{color:var(--graphite)}
 .card .ico{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;margin-bottom:24px;background:rgba(255,255,255,.7)}
 .card .ico svg{width:24px;height:24px;stroke:var(--brandsoft);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -141,7 +146,7 @@ nav .right{display:flex;align-items:center;gap:16px}
 /* MENTOR */
 .mentor{background:var(--sage)}
 .mentor .photo-tall{aspect-ratio:3/4}
-.mentor .photo-tall img{object-position:center 20%}
+.mentor .photo-tall img{object-position:center 12%}
 .checks{margin-top:28px;display:flex;flex-direction:column;gap:16px}
 .checks li{list-style:none;display:flex;gap:12px;font-size:17px;color:var(--charcoal)}
 .checks svg{flex:0 0 24px;height:24px;stroke:var(--champagne);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -185,10 +190,11 @@ details[open] summary::after{content:"–"}
 details p{margin-top:14px;color:var(--graphite)}
 
 /* FINAL */
-.final{background:var(--canopy);color:var(--white);text-align:center}
+.final{background:var(--brand);color:var(--white);text-align:center}
 .final h2{color:var(--white);max-width:900px;margin:0 auto}
-.final h2 em{font-style:italic;color:var(--champagne)}
-.final .lead{color:#d9d1c5;margin:24px auto 0}
+.final h2 em{font-style:italic;color:#e6cf9f}
+.final .lead{color:#e4eeea;margin:24px auto 0}
+.final .btn-primary{background:#f8f5f0;color:var(--brand)}
 .final .btns{justify-content:center}
 footer{background:var(--cloud);padding:48px 0}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
@@ -207,37 +213,19 @@ footer p{font-size:12px;color:var(--slate);max-width:620px}
   .wrap{padding:0 40px}
   .grid-4{grid-template-columns:repeat(2,1fr)}
   nav .links{display:none}
+  .hero .wrap{gap:40px}
+  .float-card.a{left:-16px}
+  .split{gap:48px}
 }
-@media (max-width:820px){
-  .wrap{padding:0 16px}
-  section{padding:72px 0}
-  .hero .wrap,.split,.about .split,.price-wrap{grid-template-columns:1fr}
-  .grid-3,.format,.rules{grid-template-columns:1fr}
-  .float-card.a{left:12px}.float-card.b{right:12px}
-  .stat{flex-direction:column;align-items:flex-start;padding:28px}
-  .price-card{padding:32px 24px}
-  nav .logo img{height:42px}
-  .nav-cta{display:none}
-  .sticky{left:16px;right:16px;bottom:16px;max-width:none}
-}
-@media (max-width:560px){.grid-4{grid-template-columns:1fr}}
-
-/* BRAND GREEN */
-.hero,.final{background:var(--brand)}
-.hero .lead,.final .lead{color:#e4eeea}
-.hero .eyebrow{border-color:rgba(239,230,214,.6);color:#efe6d6}
-.hero h1 em,.final h2 em{color:#e6cf9f}
-.hero .btn-primary,.final .btn-primary{background:#f8f5f0;color:var(--brand)}
-.hero .float-card .chip{background:#e6efec;color:var(--brand)}
-
-/* RESPONSIVE */
 @media (max-width:820px){
   body{font-size:15px}
+  .wrap{padding:0 16px}
   section{padding:64px 0}
   nav .wrap{height:68px}
   nav .logo img{height:44px}
+  .nav-cta{display:none}
   .hero{padding:48px 0 64px}
-  .hero .wrap{gap:40px}
+  .hero .wrap{gap:40px;grid-template-columns:1fr}
   .hero h1{font-size:clamp(36px,10vw,48px);line-height:1.1}
   .hero .lead{font-size:16px;margin-top:18px}
   .hero .eyebrow{font-size:10px;letter-spacing:.14em;margin-bottom:18px}
@@ -247,6 +235,8 @@ footer p{font-size:12px;color:var(--slate);max-width:620px}
   .float-card .num{font-size:30px}
   .float-card.b{right:0;top:20px}
   .float-card.a{left:0;bottom:20px;max-width:210px}
+  .split,.about .split,.price-wrap{grid-template-columns:1fr}
+  .grid-3,.format,.rules{grid-template-columns:1fr}
   h2{font-size:clamp(28px,7.6vw,38px);line-height:1.18}
   h3{font-size:20px}
   .lead{font-size:16px}
@@ -255,7 +245,7 @@ footer p{font-size:12px;color:var(--slate);max-width:620px}
   .grid-4,.grid-3{margin-top:36px;gap:14px}
   .card{padding:24px;border-radius:20px}
   .card .ico{margin-bottom:16px}
-  .stat{margin-top:28px;gap:12px}
+  .stat{margin-top:28px;gap:12px;flex-direction:column;align-items:flex-start;padding:28px}
   .stat .big{font-size:56px}
   .stat p{font-size:16px}
   .photo-tall{aspect-ratio:4/5!important;max-width:460px;width:100%;margin:0 auto}
@@ -266,6 +256,7 @@ footer p{font-size:12px;color:var(--slate);max-width:620px}
   .format .k{font-size:44px}
   .checks li{font-size:16px}
   .price-wrap{margin-top:36px;gap:14px}
+  .price-card{padding:32px 24px}
   .calc{gap:12px}
   .calc .op{font-size:30px;padding-bottom:16px}
   .total{flex-direction:column;align-items:flex-start;gap:4px}
@@ -277,12 +268,14 @@ footer p{font-size:12px;color:var(--slate);max-width:620px}
   details{padding:18px 20px}
   summary{font-size:17px;min-height:28px;align-items:center}
   footer .wrap{flex-direction:column;align-items:flex-start;gap:16px}
-  .sticky{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:12px 14px;gap:12px}
+  .sticky{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:12px 14px;gap:12px;max-width:none}
   .sticky .tt{font-size:15px}
   .sticky .st{display:none}
   .sticky a.mini{padding:10px 16px}
   .lang button{padding:8px 12px}
+  .hero-leaves{opacity:.1}
 }
+@media (max-width:560px){.grid-4{grid-template-columns:1fr}}
 @media (max-width:380px){
   .wrap{padding:0 14px}
   .hero h1{font-size:34px}
@@ -291,14 +284,6 @@ footer p{font-size:12px;color:var(--slate);max-width:620px}
   .total .t{font-size:38px}
 }
 html,body{overflow-x:hidden}
-
-.hero{position:relative;isolation:isolate}
-.hero-leaves{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.13}
-.hero-leaves svg{width:100%;height:100%;display:block}
-.hero .wrap{position:relative;z-index:1}
-.hero-photo img{object-position:center 18%}
-.mentor .photo-tall img{object-position:center 12%}
-@media (max-width:820px){.hero-leaves{opacity:.1}}
 </style>
 </head>
 <body>
@@ -325,6 +310,28 @@ html,body{overflow-x:hidden}
 
 <!-- HERO -->
 <header class="hero dark" id="top">
+  <div class="hero-leaves" aria-hidden="true">
+    <svg viewBox="0 0 1440 860" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="leaf" viewBox="-10 -130 620 260" overflow="visible">
+          <path d="M0,0 C70,-80 170,-118 310,-112 C450,-104 555,-52 600,0 C555,46 450,98 310,108 C170,116 70,82 0,0 Z" fill="currentColor" fill-opacity=".55"/>
+          <path d="M0,0 C70,-80 170,-118 310,-112 C450,-104 555,-52 600,0 C555,46 450,98 310,108 C170,116 70,82 0,0 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+          <path d="M0,0 C200,-6 420,-4 600,0" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M26,0 Q32,-10 38,-21 M26,0 Q32,10 38,21 M52,0 Q63,-17 73,-35 M52,0 Q63,17 73,35 M78,0 Q93,-24 107,-48 M78,0 Q93,24 107,48 M104,0 Q122,-29 140,-60 M104,0 Q122,29 140,60 M130,0 Q151,-34 172,-70 M130,0 Q151,34 172,70 M157,0 Q180,-39 204,-79 M157,0 Q180,39 204,79 M183,0 Q208,-42 234,-86 M183,0 Q208,42 234,86 M209,0 Q236,-45 264,-92 M209,0 Q236,45 264,92 M235,0 Q264,-47 292,-96 M235,0 Q264,47 292,96 M261,0 Q291,-49 320,-100 M261,0 Q291,49 320,100 M287,0 Q317,-49 347,-101 M287,0 Q317,49 347,101 M313,0 Q343,-49 373,-101 M313,0 Q343,49 373,101 M339,0 Q369,-49 399,-100 M339,0 Q369,49 399,100 M365,0 Q394,-47 423,-96 M365,0 Q394,47 423,96 M391,0 Q419,-45 446,-92 M391,0 Q419,45 446,92 M417,0 Q443,-42 469,-86 M417,0 Q443,42 469,86 M443,0 Q467,-39 491,-79 M443,0 Q467,39 491,79 M470,0 Q490,-34 511,-70 M470,0 Q490,34 511,70 M496,0 Q514,-29 531,-60 M496,0 Q514,29 531,60 M522,0 Q536,-24 551,-48 M522,0 Q536,24 551,48 M548,0 Q558,-17 569,-35 M548,0 Q558,17 569,35" fill="none" stroke="currentColor" stroke-width="1.3" stroke-opacity=".9"/>
+        </symbol>
+      </defs>
+      <g color="#cfe3dc">
+        <use href="#leaf" width="620" height="260" transform="translate(-120 40) rotate(-28) scale(1.25)"/>
+        <use href="#leaf" width="620" height="260" transform="translate(-60 520) rotate(18) scale(1.0)"/>
+        <use href="#leaf" width="620" height="260" transform="translate(260 -140) rotate(62) scale(0.85)"/>
+        <use href="#leaf" width="620" height="260" transform="translate(520 640) rotate(-42) scale(1.1)"/>
+        <use href="#leaf" width="620" height="260" transform="translate(1180 -60) rotate(128) scale(1.05)"/>
+        <use href="#leaf" width="620" height="260" transform="translate(1290 420) rotate(200) scale(1.2)"/>
+        <use href="#leaf" width="620" height="260" transform="translate(980 700) rotate(-150) scale(0.8)"/>
+        <use href="#leaf" width="620" height="260" transform="translate(760 -120) rotate(95) scale(0.6)"/>
+      </g>
+    </svg>
+  </div>
   <div class="wrap">
     <div>
       <span class="eyebrow"><span class="en">For mentors of cleaning business owners</span><span class="es">Para mentoras de dueñas de empresas de limpieza</span></span>
@@ -358,7 +365,7 @@ html,body{overflow-x:hidden}
   </div>
 </header>
 
-<!-- PAIN / REPTILIAN -->
+<!-- PAIN -->
 <section id="why">
   <div class="wrap center">
     <span class="eyebrow" style="background:var(--white);color:var(--canopy)"><span class="en">The moment every growing owner hits</span><span class="es">El momento al que llega toda dueña que crece</span></span>
@@ -372,20 +379,31 @@ html,body{overflow-x:hidden}
     </p>
     <div class="grid-4" style="text-align:left">
       <div class="card bg-peach">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 14l6 0"/></svg></div>
         <h3><span class="en">A complaint with no paper trail</span><span class="es">Un reclamo sin rastro escrito</span></h3>
         <p><span class="en">It is her word against an employee's, and the only proof is a WhatsApp chat.</span><span class="es">Es su palabra contra la de una empleada, y la única prueba es un chat de WhatsApp.</span></p>
       </div>
       <div class="card bg-cream">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 13h3"/></svg></div>
         <h3><span class="en">Files nobody can find</span><span class="es">Expedientes que nadie encuentra</span></h3>
         <p><span class="en">An audit, a lawsuit or a simple request, and the documents live in a box or in someone's memory.</span><span class="es">Una auditoría, una demanda o una simple solicitud, y los documentos viven en una caja o en la memoria de alguien.</span></p>
       </div>
       <div class="card bg-lilac">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M13 15.5c.9-.3 1.9-.5 3-.5 2.5 0 5 2 5 5"/></svg></div>
         <h3><span class="en">Teams that clash, good people who leave</span><span class="es">Equipos que chocan, buenas empleadas que se van</span></h3>
         <p><span class="en">Every conflict lands on the owner's phone, and her best workers quietly walk away.</span><span class="es">Cada conflicto termina en el teléfono de la dueña, y sus mejores trabajadoras se van en silencio.</span></p>
       </div>
       <div class="card bg-sand">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div>
         <h3><span class="en">The day something goes wrong</span><span class="es">El día en que algo sale mal</span></h3>
         <p><span class="en">An accident at a client's home, a rule nobody wrote down. No protocol, just panic.</span><span class="es">Un accidente en casa de un cliente, una regla que nadie escribió. Sin protocolo, solo pánico.</span></p>
+      </div>
+    </div>
+    <div class="stat" style="text-align:left">
+      <div class="big">1 <span style="font-size:.5em;color:var(--slate)">/</span> 2</div>
+      <div>
+        <p><span class="en">Half of all hourly workers leave a new job within the first 120 days. In cleaning, that is the difference between growing and starting over every season.</span><span class="es">La mitad de los trabajadores por hora deja un empleo nuevo en los primeros 120 días. En limpieza, esa es la diferencia entre crecer y empezar de cero cada temporada.</span></p>
+        <small>Bauer, T. N. (2010). Onboarding New Employees: Maximizing Success. SHRM Foundation.</small>
       </div>
     </div>
   </div>
@@ -415,6 +433,21 @@ html,body{overflow-x:hidden}
         <h3><span class="en">Conflicts get a process, not a shouting match.</span><span class="es">Los conflictos tienen un proceso, no una discusión.</span></h3>
         <p><span class="en">She writes her own conflict resolution policy and finally steps out of the middle.</span><span class="es">Redacta su propia política de resolución de conflictos y por fin sale del medio.</span></p>
       </div>
+      <div class="card bg-lilac out-card">
+        <span class="chip tag" style="background:var(--white)"><span class="en">Culture</span><span class="es">Cultura</span></span>
+        <h3><span class="en">Her team knows how things are done here.</span><span class="es">Su equipo sabe cómo se hacen las cosas aquí.</span></h3>
+        <p><span class="en">Values, standards and expectations stop living in her head and start living in her company.</span><span class="es">Los valores, estándares y expectativas dejan de vivir en su cabeza y empiezan a vivir en su empresa.</span></p>
+      </div>
+      <div class="card bg-sage out-card">
+        <span class="chip tag" style="background:var(--white)"><span class="en">Readiness</span><span class="es">Preparación</span></span>
+        <h3><span class="en">When something unexpected happens, she has a plan.</span><span class="es">Cuando pasa algo inesperado, tiene un plan.</span></h3>
+        <p><span class="en">Accidents, broken rules, situations nobody planned for. She knows what to declare and how.</span><span class="es">Accidentes, reglas rotas, situaciones que nadie previó. Sabe qué declarar y cómo.</span></p>
+      </div>
+      <div class="card bg-peach out-card">
+        <span class="chip tag" style="background:var(--white)"><span class="en">Ownership</span><span class="es">Resultado</span></span>
+        <h3><span class="en">She leaves with her HR office built, not just notes.</span><span class="es">Sale con su oficina de RRHH armada, no solo con apuntes.</span></h3>
+        <p><span class="en">Each session adds a working piece to her own company. By the end, the office exists and runs.</span><span class="es">Cada sesión suma una pieza real a su propia empresa. Al final, la oficina existe y funciona.</span></p>
+      </div>
     </div>
   </div>
 </section>
@@ -430,17 +463,47 @@ html,body{overflow-x:hidden}
           <span class="es">La <em>Doctrina de las 5C,</em> aplicada a todo el ciclo de vida del empleado.</span>
         </h2>
         <p class="lead" style="color:var(--aubergine);margin-top:20px">
-          <span class="en">Five lenses Maye developed from years of organizing real companies.</span>
-          <span class="es">Cinco lentes que Maye desarrolló tras años organizando empresas reales.</span>
+          <span class="en">Five lenses Maye developed from years of organizing real companies. Owners learn to read every situation through them, so the right decision becomes a habit, not a guess.</span>
+          <span class="es">Cinco lentes que Maye desarrolló tras años organizando empresas reales. Las dueñas aprenden a leer cada situación a través de ellas, para que la decisión correcta sea un hábito, no una adivinanza.</span>
         </p>
         <div class="pillars">
-          <div class="pillar on"><div class="dot">C1</div><div><b><span class="en">Compliance</span><span class="es">Cumplimiento</span></b></div></div>
-          <div class="pillar"><div class="dot">C2</div><div><b><span class="en">Culture</span><span class="es">Cultura</span></b></div></div>
-          <div class="pillar"><div class="dot">C3</div><div><b><span class="en">Communication</span><span class="es">Comunicación</span></b></div></div>
-          <div class="pillar"><div class="dot">C4</div><div><b><span class="en">Quality</span><span class="es">Calidad</span></b></div></div>
-          <div class="pillar"><div class="dot">C5</div><div><b><span class="en">Training</span><span class="es">Capacitación</span></b></div></div>
+          <div class="pillar on"><div class="dot">C1</div><div><b><span class="en">Compliance</span><span class="es">Cumplimiento</span></b><span class="d"><span class="en">Protected by design, not by luck.</span><span class="es">Protegida por diseño, no por suerte.</span></span></div></div>
+          <div class="pillar"><div class="dot">C2</div><div><b><span class="en">Culture</span><span class="es">Cultura</span></b><span class="d"><span class="en">A team that knows who it is.</span><span class="es">Un equipo que sabe quién es.</span></span></div></div>
+          <div class="pillar"><div class="dot">C3</div><div><b><span class="en">Communication</span><span class="es">Comunicación</span></b><span class="d"><span class="en">Said clearly, received, and on record.</span><span class="es">Dicho con claridad, recibido y registrado.</span></span></div></div>
+          <div class="pillar"><div class="dot">C4</div><div><b><span class="en">Quality</span><span class="es">Calidad</span></b><span class="d"><span class="en">Standards everyone can see and meet.</span><span class="es">Estándares que todas ven y cumplen.</span></span></div></div>
+          <div class="pillar"><div class="dot">C5</div><div><b><span class="en">Training</span><span class="es">Capacitación</span></b><span class="d"><span class="en">Learned, practiced and proven.</span><span class="es">Aprendido, practicado y comprobado.</span></span></div></div>
         </div>
       </div>
+      <div class="photo-tall"><img src="https://mayegomezconsultor.github.io/propconsultoriaempresarial/og-image_1.jpg" alt="Maye Gómez at work"></div>
+    </div>
+    <div class="format">
+      <div class="card"><div class="k">3</div><h3 style="margin-top:12px"><span class="en">Modules</span><span class="es">Módulos</span></h3><p><span class="en">Foundations, the employee life cycle, and the system that keeps it all running.</span><span class="es">Cimientos, el ciclo de vida del empleado y el sistema que lo mantiene funcionando.</span></p></div>
+      <div class="card"><div class="k">1</div><h3 style="margin-top:12px"><span class="en">Living case study</span><span class="es">Caso práctico vivo</span></h3><p><span class="en">One realistic cleaning company follows the group through every session. They learn by deciding, not memorizing.</span><span class="es">Una empresa de limpieza realista acompaña al grupo en cada sesión. Aprenden decidiendo, no memorizando.</span></p></div>
+      <div class="card"><div class="k">100%</div><h3 style="margin-top:12px"><span class="en">Live and remote</span><span class="es">En vivo y remoto</span></h3><p><span class="en">Delivered in Spanish, grounded in U.S. federal rules, with a clear method to check what changes in each state.</span><span class="es">Impartido en español, con base en las reglas federales de EE. UU. y un método claro para verificar lo que cambia en cada estado.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTOR -->
+<section class="mentor">
+  <div class="wrap split">
+    <div class="photo-tall"><img src="https://mayegomezconsultor.github.io/propconsultoriaempresarial/og-image_1.jpg" alt="Maye Gómez portrait"></div>
+    <div>
+      <span class="eyebrow" style="background:var(--white);color:var(--canopy)"><span class="en">For you, the mentor</span><span class="es">Para ti, la mentora</span></span>
+      <h2 style="margin-top:20px">
+        <span class="en">You lead the vision. I take care of <em>the people side.</em></span>
+        <span class="es">Tú lideras la visión. Yo me encargo <em>del lado de las personas.</em></span>
+      </h2>
+      <p class="lead" style="margin-top:20px">
+        <span class="en">Think of me as your ad hoc HR specialist for this stage of your program. I come in, I deliver the depth your owners need on talent management, and I hand them back to you stronger and more organized.</span>
+        <span class="es">Piensa en mí como tu especialista ad hoc en RRHH para este tramo de tu programa. Llego, entrego la profundidad que tus dueñas necesitan en gestión de talento y te las devuelvo más fuertes y organizadas.</span>
+      </p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">Add a specialized HR track without hiring or building it yourself.</span><span class="es">Sumas una formación especializada en RRHH sin contratar ni construirla tú.</span></span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">Your community stays yours. I work inside your program, for your group.</span><span class="es">Tu comunidad sigue siendo tuya. Trabajo dentro de tu programa, para tu grupo.</span></span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">Your owners get real deliverables they apply in their companies every week.</span><span class="es">Tus dueñas reciben entregables reales que aplican en sus empresas cada semana.</span></span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">One clear block, one clear price, renewable for every new group you open.</span><span class="es">Un bloque claro, un precio claro, renovable con cada grupo nuevo que abras.</span></span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -455,7 +518,7 @@ html,body{overflow-x:hidden}
     </h2>
     <div class="price-wrap">
       <div class="price-card dark">
-        <span class="eyebrow"><span class="en">Per group</span><span class="es">Por grupo</span></span>
+        <span class="eyebrow"><span class="en">Per group (cohort)</span><span class="es">Por grupo (cohorte)</span></span>
         <div class="calc">
           <div><div class="n">$65</div><div class="u"><span class="en">USD per hour</span><span class="es">USD por hora</span></div></div>
           <div class="op">×</div>
@@ -469,6 +532,60 @@ html,body{overflow-x:hidden}
           <a class="btn btn-primary wa" href="#"><span class="en">Reserve your group's dates</span><span class="es">Reserva las fechas de tu grupo</span></a>
         </div>
       </div>
+      <div class="incl">
+        <h3><span class="en">Every block includes</span><span class="es">Cada bloque incluye</span></h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">10 weekly live sessions of 3 hours</span><span class="es">10 sesiones semanales en vivo de 3 horas</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">A full Q&amp;A hour in every session</span><span class="es">Una hora completa de preguntas en cada sesión</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">Case-based practice with working formats</span><span class="es">Práctica con caso real y formatos de trabajo</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">Weekly application tasks for their own company</span><span class="es">Tareas semanales aplicadas a su propia empresa</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><span class="en">Certificate of completion for each owner</span><span class="es">Certificado de culminación para cada dueña</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rules">
+      <div class="card"><h4><span class="en">Same price, any group</span><span class="es">Mismo precio, cualquier grupo</span></h4><p><span class="en">The block is priced per group, not per person. Group size is agreed with you before we start.</span><span class="es">El bloque se cotiza por grupo, no por persona. El tamaño del grupo se acuerda contigo antes de empezar.</span></p></div>
+      <div class="card"><h4><span class="en">New group, new block</span><span class="es">Grupo nuevo, bloque nuevo</span></h4><p><span class="en">Opening another cohort? Each new group starts from session one with its own 30-hour block.</span><span class="es">¿Abres otra cohorte? Cada grupo nuevo empieza desde la sesión uno con su propio bloque de 30 horas.</span></p></div>
+      <div class="card"><h4><span class="en">Your calendar, your rhythm</span><span class="es">Tu calendario, tu ritmo</span></h4><p><span class="en">One 3-hour session per week. We set the day and time that fits your community.</span><span class="es">Una sesión de 3 horas por semana. Definimos el día y la hora que mejor le quede a tu comunidad.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap split">
+    <div class="photo-tall"><img src="https://mayegomezconsultor.github.io/propconsultoriaempresarial/og-image_1.jpg" alt="Maye Gómez portrait"></div>
+    <div>
+      <span class="eyebrow" style="background:var(--white);color:var(--canopy)"><span class="en">Who will teach your group</span><span class="es">Quién formará a tu grupo</span></span>
+      <h2 style="margin-top:20px">Maye Gómez</h2>
+      <p class="lead" style="margin-top:20px">
+        <span class="en">Attorney and business consultant with more than 10 years organizing companies and teams. Today she works with small cleaning businesses in the United States, turning the chaos of fast growth into clear, human systems owners can actually use.</span>
+        <span class="es">Abogada y consultora de negocios con más de 10 años organizando empresas y equipos. Hoy trabaja con pequeñas empresas de limpieza en Estados Unidos, convirtiendo el caos del crecimiento rápido en sistemas claros y humanos que las dueñas realmente usan.</span>
+      </p>
+      <div class="creds">
+        <span class="chip"><span class="en">Attorney</span><span class="es">Abogada</span></span>
+        <span class="chip"><span class="en">10+ years in organizations</span><span class="es">10+ años en organizaciones</span></span>
+        <span class="chip"><span class="en">Cleaning industry focus</span><span class="es">Enfoque en limpieza</span></span>
+        <span class="chip"><span class="en">Creator of the 5C Doctrine</span><span class="es">Creadora de la Doctrina 5C</span></span>
+      </div>
+      <p class="quote">
+        <span class="en">"My goal is not to fill them with theory. It is that they walk out with an office that protects them, and a team that wants to stay."</span>
+        <span class="es">"Mi meta no es llenarlas de teoría. Es que salgan con una oficina que las proteja y un equipo que quiera quedarse."</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <h2 class="center" style="text-align:center"><span class="en">Questions mentors ask</span><span class="es">Preguntas que hacen las mentoras</span></h2>
+    <div class="faq">
+      <details><summary><span class="en">Do the owners need HR experience?</span><span class="es">¿Las dueñas necesitan experiencia en RRHH?</span></summary><p><span class="en">No. The program starts from zero. They only need a running business and people to manage.</span><span class="es">No. El programa empieza desde cero. Solo necesitan tener su empresa operando y personal a cargo.</span></p></details>
+      <details><summary><span class="en">Is this legal advice?</span><span class="es">¿Esto es asesoría legal?</span></summary><p><span class="en">No. It is an educational program built on U.S. federal rules. Owners also learn a clear method to verify the rules of their own state and city, and to know when to call a local attorney.</span><span class="es">No. Es un programa formativo basado en las reglas federales de EE. UU. Las dueñas también aprenden un método claro para verificar las reglas de su estado y ciudad, y para saber cuándo llamar a un abogado local.</span></p></details>
+      <details><summary><span class="en">What language is it taught in?</span><span class="es">¿En qué idioma se imparte?</span></summary><p><span class="en">Live sessions are in Spanish. U.S. documents and legal terms are explained in plain words.</span><span class="es">Las sesiones en vivo son en español. Los documentos y términos legales de EE. UU. se explican con palabras sencillas.</span></p></details>
+      <details><summary><span class="en">What if someone misses a session?</span><span class="es">¿Y si alguien falta a una sesión?</span></summary><p><span class="en">The program is designed to be lived in real time, because the learning happens in the practice and the questions. We agree on the attendance policy with you before we begin.</span><span class="es">El programa está diseñado para vivirse en tiempo real, porque el aprendizaje ocurre en la práctica y en las preguntas. Acordamos contigo la política de asistencia antes de empezar.</span></p></details>
+      <details><summary><span class="en">Can the materials be shared or recorded?</span><span class="es">¿Se pueden compartir o grabar los materiales?</span></summary><p><span class="en">Materials are licensed individually to each participant for use in her own company. Sessions are live and interactive, and recording or redistributing them is not permitted.</span><span class="es">Los materiales se licencian de forma individual a cada participante para usarlos en su propia empresa. Las sesiones son en vivo e interactivas, y no se permite grabarlas ni redistribuirlas.</span></p></details>
     </div>
   </div>
 </section>
@@ -480,44 +597,59 @@ html,body{overflow-x:hidden}
       <span class="en">Give your community the HR office their growth <em>deserves.</em></span>
       <span class="es">Dale a tu comunidad la oficina de RRHH que su crecimiento <em>merece.</em></span>
     </h2>
+    <p class="lead">
+      <span class="en">Let's talk about your group, your dates and what your owners need most right now.</span>
+      <span class="es">Hablemos de tu grupo, tus fechas y lo que tus dueñas más necesitan ahora.</span>
+    </p>
     <div class="btns">
       <a class="btn btn-primary wa" href="#"><span class="en">Book a call on WhatsApp</span><span class="es">Agenda por WhatsApp</span></a>
+      <a class="btn btn-ghost" href="#investment"><span class="en">Review the investment</span><span class="es">Revisar la inversión</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
+    <img src="https://mayegomezconsultor.github.io/propconsultoriaempresarial/og-image_1.jpg" alt="Maye Gómez, Consultor de empresas">
     <p>
-      <span class="en">© 2026 Luma Consultoría de Negocios · Maye Gómez.</span>
-      <span class="es">© 2026 Luma Consultoría de Negocios · Maye Gómez.</span>
+      <span class="en">© 2026 Luma Consultoría de Negocios · Maye Gómez, Consultor de empresas. Educational program; it does not replace legal advice in your state. Program content and the 5C Doctrine are the intellectual property of their author.</span>
+      <span class="es">© 2026 Luma Consultoría de Negocios · Maye Gómez, Consultor de empresas. Programa formativo; no sustituye la asesoría legal de tu estado. El contenido del programa y la Doctrina 5C son propiedad intelectual de su autora.</span>
     </p>
   </div>
 </footer>
 
+<div class="sticky" id="sticky">
+  <button class="x" type="button" aria-label="Close" onclick="document.getElementById('sticky').remove()">×</button>
+  <div>
+    <div class="tt"><span class="en">Planning your next cohort?</span><span class="es">¿Planeas tu próxima cohorte?</span></div>
+    <div class="st"><span class="en">Dates are reserved in order of confirmation.</span><span class="es">Las fechas se reservan por orden de confirmación.</span></div>
+  </div>
+  <a class="mini wa" href="#"><span class="en">Talk to Maye</span><span class="es">Hablar con Maye</span></a>
+</div>
+
 <script>
 (function(){
-  var root = document.documentElement;
-  var msg = {
-    en: "Hi Maye! I saw your HR Office program and I'd like to talk about bringing it to my group.",
-    es: "¡Hola Maye! Vi tu programa de Oficina de RRHH y me gustaría conversar sobre llevarlo a mi grupo."
+  var root=document.documentElement;
+  var msg={
+    en:"Hi Maye! I saw your HR Office program and I'd like to talk about bringing it to my group.",
+    es:"¡Hola Maye! Vi tu programa de Oficina de RRHH y me gustaría conversar sobre llevarlo a mi grupo."
   };
   function setLinks(l){
-    var href = "https://wa.me/584124784922?text=" + encodeURIComponent(msg[l]);
-    document.querySelectorAll('a.wa').forEach(function(a){ a.href = href; a.target = "_blank"; a.rel = "noopener"; });
+    var href="https://wa.me/584124784922?text="+encodeURIComponent(msg[l]);
+    document.querySelectorAll('a.wa').forEach(function(a){a.href=href;a.target="_blank";a.rel="noopener"});
   }
   function setLang(l){
-    root.setAttribute('data-lang', l);
-    root.setAttribute('lang', l);
-    document.querySelectorAll('.lang button').forEach(function(b){
-      b.classList.toggle('on', b.dataset.set === l);
-    });
+    root.setAttribute('data-lang',l);root.setAttribute('lang',l);
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.set===l)});
     setLinks(l);
   }
-  document.querySelectorAll('.lang button').forEach(function(b){
-    b.addEventListener('click', function(){ setLang(b.dataset.set); });
-  });
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set)})});
+  
+  // Idioma español por defecto al cargar
   setLang('es');
+
+  var st=document.getElementById('sticky');
+  window.addEventListener('scroll',function(){if(st)st.classList.toggle('show',window.scrollY>700)},{passive:true});
 })();
 </script>
 </body>
